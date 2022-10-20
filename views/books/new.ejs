@@ -1,0 +1,44 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">New book </h1>
+        <div class="col-6 offset-3">
+            <form action="/books" method="POST" novalidate class="validated-form">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="books[title]" required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="genre">genre</label>
+                    <input class="form-control" type="text" id="genre" name="books[genre]" required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image">image url</label>
+                    <input class="form-control" type="text" id="image" name="books[image]" required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">price</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="price-label">$</span>
+                        </div>
+                        <input type="text" class="form-control" id="price" name="books[price]" placeholder="0.00"
+                            aria-label="price" aria-describedby="price-label" required>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label" for="description">description</label>
+                    <textarea class="form-control" type="text" id="description" name="books[description]" required>
+                    </textarea>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3"> <button class="btn btn-success">Add book</button></div>
+            </form>
+            <a href="/books">All books</a>
+        </div>
+    </div>

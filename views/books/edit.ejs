@@ -1,0 +1,49 @@
+<% layout('layouts/boilerplate') %>
+
+    <div class="row">
+        <h1 class="text-center">Edit books </h1>
+        <div class="col-6 offset-3">
+            <form action="/books/<%=books._id%>?_method=PUT" method="POST" novalidate class="validated-form">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="books[title]" required
+                        value="<%=books.title%>">
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="genre">genre</label>
+                    <input class="form-control" type="text" id="genre" name="books[genre]" required
+                        value="<%=books.genre%>">
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image">image url</label>
+                    <input class="form-control" type="text" id="image" name="books[image]" required
+                        value="<%=books.image%>">
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">price</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="price-label">$</span>
+                        </div>
+                        <input type="text" class="form-control" id="price" name="books[price]" required
+                            placeholder="0.00" aria-label="price" aria-describedby="price-label"
+                            value="<%=books.price%>">
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label" for="description">description</label>
+                    <textarea class="form-control" type="text" id="description" name="books[description]" required><%=books.description%>
+                    </textarea>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3"> <button class="btn btn-info">Update books</button></div>
+            </form>
+            <a href="/books/<%=books._id%>">Back To All Books</a>
+        </div>
+    </div>
